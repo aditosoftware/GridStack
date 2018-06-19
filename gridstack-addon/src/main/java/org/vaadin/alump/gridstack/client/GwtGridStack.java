@@ -170,6 +170,10 @@ public class GwtGridStack extends ComplexPanel {
             wrapper.setAttribute("data-gs-max-width", Integer.toString(info.maxHeight.intValue()));
         }
 
+        if(info.resizeHandles != null) {
+            wrapper.setAttribute("data-gs-resize-handles", info.resizeHandles);
+        }
+
         if(info.locked) {
             wrapper.setAttribute("data-gs-locked", "yes");
         }

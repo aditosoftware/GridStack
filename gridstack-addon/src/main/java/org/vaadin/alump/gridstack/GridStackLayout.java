@@ -195,7 +195,24 @@ public class GridStackLayout extends AbstractLayout implements LayoutEvents.Layo
      *                      drag handle. Notice that using a separate drag handle is recommended if you component
      *                      is or contains any active components (buttons etc..)
      */
-    public void addComponent(Component component, int x, int y, int width, int height, boolean useDragHandle) {
+    public void addComponent(Component component, int x, int y, int width, int height, boolean useDragHandle)
+    {
+        addComponent(component, x, y, width, height, useDragHandle, null);
+    }
+
+    /**
+     * Add component to given slot, and define it's size
+     * @param component Component added
+     * @param x Slot's X coordinate (use negative values if position can be defined on client side)
+     * @param y Slot's Y coordinate (use negative values if position can be defined on client side)
+     * @param width Width of space reserved (in slots)
+     * @param height Height of space reserved (in slots)
+     * @param useDragHandle true to add component with a separate drag handle, or false to make whole content act as a
+     *                      drag handle. Notice that using a separate drag handle is recommended if you component
+     *                      is or contains any active components (buttons etc..)
+     * @param resizeHandles Defines the resize handle locations (possible values: n, e, s, w, ne, se, sw, nw, all)
+     */
+    public void addComponent(Component component, int x, int y, int width, int height, boolean useDragHandle, String resizeHandles) {
         super.addComponent(component);
         components.add(component);
 
@@ -205,6 +222,7 @@ public class GridStackLayout extends AbstractLayout implements LayoutEvents.Layo
         info.width = width;
         info.height = height;
         info.useDragHandle = useDragHandle;
+        info.resizeHandles = resizeHandles;
         getState().childOptions.put(component, info);
     }
 
