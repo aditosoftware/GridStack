@@ -722,4 +722,22 @@ public class GridStackLayout extends AbstractLayout implements LayoutEvents.Layo
                 .flatMap(o -> Optional.ofNullable(o.styleName));
     }
 
+    /**
+     * Set the handle class for the drag handle.
+     *
+     * @param handleClass Handle class name
+     */
+    public GridStackLayout setHandleClass (String handleClass) {
+        getState().gridStackOptions.handleClass =  handleClass;
+        return this;
+    }
+
+    /**
+     * Get the handle class for the drag handle.
+     *
+     * @return
+     */
+    public String getHandleClass () {
+        return getState().gridStackOptions.handleClass;
+    }
 }
