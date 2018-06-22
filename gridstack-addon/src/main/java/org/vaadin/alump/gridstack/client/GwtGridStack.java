@@ -299,9 +299,11 @@ public class GwtGridStack extends ComplexPanel {
                 that.@org.vaadin.alump.gridstack.client.GwtGridStack::onGridStackChange(*)(e, items);
             });
             element.on('dragstart', function(e, items) {
+                $wnd.$('#' + elementId).addClass('grid-stack-dragging');
                 that.@org.vaadin.alump.gridstack.client.GwtGridStack::onGridStackDragStart(*)(e);
             });
             element.on('dragstop', function(e, items) {
+                $wnd.$('#' + elementId).removeClass('grid-stack-dragging');
                 that.@org.vaadin.alump.gridstack.client.GwtGridStack::onGridStackDragStop(*)(e);
             });
             element.on('resizestart', function(e, items) {
