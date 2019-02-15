@@ -481,6 +481,16 @@ public class GridStackLayout extends AbstractLayout implements LayoutEvents.Layo
         getComponentOptions(child).locked = locked;
     }
 
+    /**
+     * Change NoMove state of child. NoMove Children cannot be Moved around.
+     * @param child Child component of layout
+     * @param noMove true if no movement is possible, false if not
+     * @throws IllegalArgumentException If child not found
+     */
+    public void setComponentNoMove(Component child, boolean noMove) {
+        getComponentOptions(child).noMove = noMove;
+    }
+
     protected GridStackChildOptions getComponentOptions(Component child) {
         return getComponentOptions(child, true, true);
     }

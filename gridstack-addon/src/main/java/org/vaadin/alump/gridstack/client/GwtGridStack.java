@@ -178,6 +178,10 @@ public class GwtGridStack extends ComplexPanel {
             wrapper.setAttribute("data-gs-locked", "yes");
         }
 
+        if(info.noMove) {
+            wrapper.setAttribute("data-gs-no-move", "yes");
+        }
+
         Element content = Document.get().createDivElement();
         content.addClassName(CONTENT_CLASSNAME);
 

@@ -5,7 +5,7 @@
 	<groupId>org.vaadin.alump.gridstack</groupId>
 	<artifactId>gridstack-addon</artifactId>
 	<packaging>bundle</packaging>
-	<version>0.4.2-SNAPSHOT</version>
+	<version>0.4.3</version>
 	<name>GridStack Add-on</name>
 
 	<properties>
@@ -28,14 +28,13 @@
 		<name>Sami Viitanen</name>
 		<url>https://github.com/alump/GridStack/</url>
 	</organization>
-    
-	<scm>
-		<url>git://github.com/alump/GridStack.git</url>
-		<connection>scm:git:git://github.com/alump/GridStack.git</connection>
-		<developerConnection>scm:git:ssh://git@github.com:/alump/GridStack.git</developerConnection>
-		<tag>GridStack add-on for Vaadin</tag>
-	</scm>
 
+	<parent>
+		<groupId>de.adito</groupId>
+		<artifactId>adito-parent</artifactId>
+		<version>1.1.1</version>
+	</parent>
+    
 	<issueManagement>
 		<system>GitHub</system>
 		<url>https://github.com/alump/GridStack/issues</url>
